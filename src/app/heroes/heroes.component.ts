@@ -12,16 +12,10 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {}
 
-  selectedHero: Hero = { id: 0, name: 'none' };
+  selectedHero?: Hero;
   showHero: boolean = false;
 
   onSelect(hero: Hero, id: number): void {
-    if (id === this.selectedHero?.id) {
-      this.selectedHero = { id: 0, name: 'none' };
-      this.showHero = false;
-    } else {
-      this.selectedHero = hero;
-      this.showHero = true;
-    }
+    this.selectedHero = hero;
   }
 }
